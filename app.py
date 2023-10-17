@@ -1,11 +1,16 @@
-from flask import Flask
+import os
+from flask import Flask, render_template
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return("Flask top")
+    return render_template("index.html")
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=os.getenv("DEBUG"))
 
