@@ -17,12 +17,6 @@ def base():
     return render_template("base.html", title="Python course for Goiteens")
 
 
-@app.route("/birthday")
-def birthday():
-    return render_template("birthday.html", title="2010")
-
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login_user():
     if request.method == "POST":
@@ -31,6 +25,10 @@ def login_user():
     else:
         user = request.args.get("name")
         return f"Method GET, user is {user}"
+
+@app.route("/birthday")
+def birthday():
+    return render_template("birthday.html", title="2010")
 
 
 
