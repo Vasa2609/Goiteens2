@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Створити Article
+{% endblock %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <p>Добавлення нової статі</p>
+    <form method="post">
+        <input type="text" name="title" class="form-control" placeholder="Введи заголовок"/>
+        <textarea name="intro" id="intro" class="form-control" placeholder="Введи опис"></textarea>
+        <textarea name="text" id="text" class="form-control" placeholder="Введи текст"></textarea>
+        <input type="submit" class="btn btn-success"/>
+    </form>
+</div>
+{% endblock %}
